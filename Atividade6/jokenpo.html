@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            while(true) {
+                const opcoes = [
+                    "pedra",
+                    "papel",
+                    "tesoura"
+                ];
+
+                const escolhaDoComputador = opcoes[Math.floor(Math.random() * 3)]; 
+                const escolhaDoJogador= prompt("Pedra, papel, tesoura").toLowerCase();
+
+                const situacoesDeVitoria = {
+                    pedra: "tesoura",
+                    papel: "pedra",
+                    tesoura: "papel"
+                }
+
+                if (!situacoesDeVitoria[escolhaDoJogador]) {
+                    alert('Opção invalida!')
+                    continue;
+                }
+
+                const jogadorVenceu = situacoesDeVitoria[escolhaDoJogador] === escolhaDoComputador;
+                const computadorVenceu = situacoesDeVitoria[escolhaDoComputador] === escolhaDoJogador;
+
+                let apresentacao = `Você jogou: ${escolhaDoJogador}\nO computador jogou: ${escolhaDoComputador}\n`;
+                if (jogadorVenceu) {
+                    apresentacao += 'Você venceu!';
+                } else if (computadorVenceu) {
+                    apresentacao += 'O computador venceu!';
+                } else {
+                    apresentacao += 'Foi um empate!';
+                }
+
+                alert(apresentacao);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
