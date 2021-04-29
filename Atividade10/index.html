@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janela</title>
+</head>
+<body>
+    <style>
+        .window {
+            width: min-content;
+        }
+
+        .window:hover img[open-window] {
+            display: block;
+        }
+
+        .window:hover img[closed-window] {
+            display: none;
+        }
+
+        img[broken-window]:not(:only-child), img[open-window] {
+            display: none;
+        }
+    </style>
+
+    <h1>Abra a janela</h1>
+    <div class="window">
+        <img closed-window src="./static/closed_window.jpeg" alt="">
+        <img open-window src="./static/open_window.jpeg" alt="">
+        <img broken-window src="./static/broken_window.jpeg" alt="">
+    </div>
+
+    <script >
+        const windowDiv = document.querySelector('div.window');
+        windowDiv.addEventListener('click', () => {
+            console.log('click!')
+            windowDiv.querySelectorAll(':not([broken-window])').forEach(element => {
+                element.remove();
+            });
+        });
+    </script>
+</body>
+</html>
