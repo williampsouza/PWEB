@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="side-menu">
+            <h2>Bem vindo!</h2>
+            <ul>
+                <li><a href="#about">Sobre mim</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <ul class="toggle" @click="toggleMenu">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </header>
+    <main id="main">
+        <div class="container">
+            <div class="floating-header">
+                <h1>William Souza</h1>
+                <h3>System Analyst &</h3>
+                <h3>Developer</h3>
+            </div>
+
+            <div class="floating-arrow">
+                <i class="fas fa-arrow-down"></i>
+            </div>
+            <video playsinline autoplay muted loop src="./static/beach.mp4" id="bgvid">
+            </video>
+        </div>
+        <div id="about" class="container">
+            <h1 class="title">Sobre mim</h1>
+            <section class="content">
+                <span class="column">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam felis justo, sodales vel rhoncus eu, ultrices id justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In eu justo nec nibh congue iaculis. Nulla feugiat, enim at vehicula egestas, diam sem congue quam, ut rhoncus ipsum lectus ut urna. Vestibulum ac vehicula odio. Maecenas tristique imperdiet quam, semper iaculis massa ultricies vel. Phasellus vitae ligula et mauris gravida semper. Sed suscipit, nisl eu ullamcorper commodo, ligula felis interdum nulla, et cursus est odio nec turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eu ipsum non mi malesuada tempor. Donec laoreet, eros sollicitudin rhoncus consequat, orci sapien tempor sapien, eget condimentum lectus tellus vel felis. In ipsum felis, maximus et est at, faucibus vestibulum quam. Nunc iaculis nulla nec nunc dictum, eu hendrerit neque laoreet.</span>
+                <span class="column">Duis ullamcorper, nisl eu volutpat porta, dui lorem aliquet nisi, id cursus massa felis in neque. Fusce fermentum placerat cursus. Nam quis ex sagittis, scelerisque justo quis, dapibus nulla. Nulla ut dolor vel risus aliquam luctus sed a orci. Quisque a luctus mauris, in luctus nisi. Ut consequat in mi luctus pulvinar. Etiam feugiat, tortor consequat pretium elementum, est orci molestie mauris, nec iaculis urna lectus nec mauris. Sed varius interdum maximus. Quisque condimentum tortor enim, sit amet pharetra quam pretium in. In vestibulum euismod vestibulum. Nunc risus augue, pulvinar at velit non, tempus ullamcorper ante. Donec at eleifend eros.</span>
+            </section>
+        </div>
+        <div id="contato" class="container">
+            <div class="floating-header">
+            <h2 class="title-sm">Entre em contato!</h1>
+            </div>
+            <form class="contact-me">
+                <label>Name</label><br>
+                <input type="text"><br>
+                <label>Email Address</label><br>
+                <input type="text"><br>
+                
+                <label>Message</label><br>
+                <input type="text"><br>
+                <button>Submit</button>
+            </form>
+            <video playsinline autoplay muted loop src="./static/beach.mp4" id="bgvid">
+            </video>
+        </div>     
+        </div>
+    </main>
+</body>
+<script src="./js/main.js"></script>
+</html>
