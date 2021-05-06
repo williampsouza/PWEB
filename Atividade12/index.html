@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" name="main-form" action="#">
+        <h2>Formulário Principal</h2>
+        <div>
+            <label for="name">Nome</label>
+            <input type="text" maxlength="10" name="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label for="commentary">Comentário</label>
+            <br>
+            <textarea name="commentary" minlength="20" rows="5" cols="33"></textarea>
+        </div>
+        <div>
+            <h3>Pesquisa</h3>
+            <p>Primeira vez nesta página?</p>
+            <input type="radio" name="newComer" required value="true">
+            <label for="newComer">Sim</label>
+            <input type="radio" name="newComer" value="false">
+            <label for="newComer">Não</label>
+        </div>
+        <br>
+
+        <button type="submit">Enviar</button>
+        <button onclick="resetForm()">Limpar</button>
+    </form>
+    <script>
+        const form = document.getElementById('form');
+        form.addEventListener('submit', () => {
+            const newComer = JSON.parse(document['main-form'].elements.newComer.value)
+            alert(newComer ? 'Volte sempre a esta página!' : 'Que bom que você voltou a visitar esta página!')
+        });
+
+        function resetForm() {
+            document['main-form'].reset()
+        }
+    </script>
+</body>
+</html>

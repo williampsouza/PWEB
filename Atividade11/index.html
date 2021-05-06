@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function toUpper(elm) {
+        if (elm.checked) {
+            const textBox = document.getElementById('textBox');
+            textBox.value = textBox.value.toUpperCase();
+        }
+    }
+
+    function toLower(elm) {
+        if (elm.checked) {
+            const textBox = document.getElementById('textBox');
+            textBox.value = textBox.value.toLowerCase();
+        }
+    }
+</script>
+<body>
+    <input id="textBox"type="text">
+    <div>
+        <label for="toUpper">Letra Maiuscula</label>
+        <input type="checkbox" name="toUpper" onclick="toUpper(this)">
+    </div>
+    <div>
+        <label for="toLower">Letra Minuscula</label>
+        <input type="checkbox" name="toLower" onclick="toLower(this)">
+    </div>
+</html>

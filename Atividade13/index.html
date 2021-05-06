@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="courses" onclick="confirmSelection(this)">
+        <option value="">Selecione um curso</option>
+    </select>
+    <script>
+        const courses = [
+            {"name":"Análise e Desenvolvimento de Sistemas","href":"http://fatecsorocaba.edu.br/curso_ads.asp"},
+            {"name":"Eletrônica Automotiva","href":"http://fatecsorocaba.edu.br/curso_ea.asp"},
+            {"name":"Fabricação Mecânica","href":"http://fatecsorocaba.edu.br/curso_fm.asp"},
+            {"name":"Gestão Empresarial - EAD","href":"http://fatecsorocaba.edu.br/curso_ead-ge.asp"},
+            {"name":"Gestão da Qualidade","href":"http://fatecsorocaba.edu.br/curso_gq.asp"},
+            {"name":"Logística","href":"http://fatecsorocaba.edu.br/curso_log.asp"},
+            {"name":"Manufatura Avançada","href":"http://fatecsorocaba.edu.br/curso_ma.asp"},
+            {"name":"Processos Metalúrgicos","href":"http://fatecsorocaba.edu.br/curso_pm.asp"},
+            {"name":"Polímeros","href":"http://fatecsorocaba.edu.br/curso_pol.asp"},
+            {"name":"Projetos Mecânicos","href":"http://fatecsorocaba.edu.br/curso_proj.asp"},
+            {"name":"Sistemas Biomédicos","href":"http://fatecsorocaba.edu.br/curso_sb.asp"}
+        ]
+
+            courses
+                .map(course => `<option value="${course.href}">${course.name}</option>`)
+                .forEach(tag => document.getElementById('courses').innerHTML += tag);
+
+        function confirmSelection(elm) {
+            const selectedOption = elm.options[elm.selectedIndex].text;
+
+            if (!elm.selectedIndex) return; 
+
+            const choice = confirm(`Você tem certeza de que deseja abrir o curso "${selectedOption}"?`);
+
+            if (choice) {
+                openCourse();
+                return;
+            }
+        }
+
+        function openCourse() {
+            const selectedCourse = document.getElementById('courses').value;
+            window.open(selectedCourse, 'FATEC', 'width=600,height=300')
+        }
+    </script>
+</body>
+</html>
